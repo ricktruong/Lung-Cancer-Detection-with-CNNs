@@ -70,11 +70,11 @@ def make_confusion_matrix(
     else:
         group_percentages = blanks
 
-    box_labels = [
+    box_labels_list = [
         f"{v1}{v2}{v3}".strip()
         for v1, v2, v3 in zip(group_labels, group_counts, group_percentages)
     ]
-    box_labels = np.asarray(box_labels).reshape(cf.shape[0], cf.shape[1])
+    box_labels = np.asarray(box_labels_list).reshape(cf.shape[0], cf.shape[1])
 
     # CODE TO GENERATE SUMMARY STATISTICS & TEXT FOR SUMMARY STATS
     if sum_stats:
